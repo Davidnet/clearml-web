@@ -981,7 +981,7 @@ export class CommonExperimentsViewEffects {
         ...((action.data.docker.image || action.data.taskInit) && {
           container: {
             image: action.data.docker.image,
-            arguments: `${action.data.docker.args}${action.data.taskInit ? ' -e CLEARML_AGENT_FORCE_TASK_INIT=1' : ''}${action.data.poetry ? ' -e CLEARML_AGENT_FORCE_POETRY' : ''}${action.data.venv ? ' -e CLEARML_AGENT_SKIP_PIP_VENV_INSTALL=' + action.data.venv : ''}${action.data.requirements === 'skip' ? '-e CLEARML_AGENT_SKIP_PYTHON_ENV_INSTALL=1' : ''}`.trimStart(),
+            arguments: `${action.data.docker.args}${action.data.taskInit ? ' -e CLEARML_AGENT_FORCE_TASK_INIT=1 ' : ''}${action.data.poetry ? ' -e CLEARML_AGENT_FORCE_POETRY' : ''}${action.data.venv ? ' -e CLEARML_AGENT_SKIP_PIP_VENV_INSTALL=' + action.data.venv : ''}${action.data.requirements === 'skip' ? '-e CLEARML_AGENT_SKIP_PYTHON_ENV_INSTALL=1' : ''}`.trimStart(),
             setup_shell_script: action.data.docker.script
           }
         }),
